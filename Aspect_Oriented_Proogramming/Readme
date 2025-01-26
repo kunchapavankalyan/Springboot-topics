@@ -1,0 +1,40 @@
+# AOP
+# create a project
+# @SpringBootApplication contains the dependency of AOP(spring-boot-starter-aop)
+# 		<dependency>
+# 			<groupId>org.aspectj</groupId>
+# 			<artifactId>aspectjrt</artifactId>
+# 			<version>1.9.20</version>
+# 		</dependency>
+# 		<dependency>
+# 			<groupId>org.aspectj</groupId>
+# 			<artifactId>aspectjweaver</artifactId>
+# 			<version>1.9.20</version>
+# 		</dependency>
+
+# 1. Joinpoint
+# A joinpoint is a specific point in the execution of a program where an action can be taken using AOP.
+# >>Examples of joinpoints:
+# A method being called.
+# An exception being thrown.
+# A field being modified.
+# In Spring AOP, joinpoints are always method executions (other joinpoint types, like field modifications, are not supported by Spring AOP).
+
+# 2. Aspect
+# An aspect is a modularization of cross-cutting concerns in your application.
+# A cross-cutting concern is a functionality that affects multiple parts of an application, like logging, security, or transaction management.
+# Aspects are implemented using classes annotated with @Aspect in Spring AOP.
+# Aspects contain advice (what to do) and pointcuts (where to do it).
+
+# 3. Advice
+# An advice defines the action taken by an aspect at a particular joinpoint.
+
+# It is what happens at the joinpoint.
+# There are five types of advice in Spring AOP:
+# Before Advice		: Runs before the joinpoint.
+# After (Finally) Advice  : Runs after the joinpoint, regardless of its outcome.
+# After Returning Advice  : Runs after the joinpoint if it completes successfully.
+# After Throwing Advice   : Runs if the joinpoint throws an exception.
+# Around Advice: Runs both before and after the joinpoint, giving you the most control.
+
+#in main try to annotate with @EnableAspectJAutoProxy
